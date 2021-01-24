@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Paiement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/dist/style.css">
+
+<!-- component -->
+<style>@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);</style>
+<style>
+/*
+module.exports = {
+    plugins: [require('@tailwindcss/forms'),]
+};
+*/
+.form-radio {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  flex-shrink: 0;
+  border-radius: 100%;
+  border-width: 2px;
+}
+
+.form-radio:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media not print {
+  .form-radio::-ms-check {
+    border-width: 1px;
+    color: transparent;
+    background: inherit;
+    border-color: inherit;
+    border-radius: inherit;
+  }
+}
+
+.form-radio:focus {
+  outline: none;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0aec0'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e");
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+  background-repeat: no-repeat;
+  padding-top: 0.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+}
+
+.form-select::-ms-expand {
+  color: #a0aec0;
+  border: none;
+}
+
+@media not print {
+  .form-select::-ms-expand {
+    display: none;
+  }
+}
+
+@media print and (-ms-high-contrast: active), print and (-ms-high-contrast: none) {
+  .form-select {
+    padding-right: 0.75rem;
+  }
+}
+</style>
+<nav class="bg-gray-800">
+   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+     <div class="relative flex items-center justify-between h-16">
+       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+         <!-- Mobile menu button-->
+         <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
+           <span class="sr-only">Open main menu</span>
+           <!-- Icon when menu is closed. -->
+           <!--
+             Heroicon name: menu
+
+             Menu open: "hidden", Menu closed: "block"
+           -->
+           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+           </svg>
+           <!-- Icon when menu is open. -->
+           <!--
+             Heroicon name: x
+
+             Menu open: "block", Menu closed: "hidden"
+           -->
+           <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+           </svg>
+         </button>
+       </div>
+       <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+         <div class="flex-shrink-0 flex items-center">
+           <img class="block lg:hidden h-8 w-auto" src="dofus_blanc.png" alt="Jp">
+           <img class="hidden lg:block h-11 w-11" src="dofus_blanc.png" alt="Jp">
+         </div>
+         <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="accueil.html" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
+                <a href="utilisateurs.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Utilisateurs</a>
+                <a href="lepaiement.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Système de Paiement</a>
+                <a href="Connexion.html " class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Connexion</a>
+                <a href="Statistiques.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Statistiques</a>
+                <a href="utilisateurs.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Gestion des utilisateurs</a>
+              </div>
+         </div>
+       </div>
+
+       <!-- Search bar-->
+<div class="pt-2  pb-2  relative mx-auto text-gray-600">
+   <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-8 rounded-sm text-sm focus:outline-none"
+     type="search" name="search" placeholder="Search">
+   <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+     <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+       xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+       viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+       width="512px" height="512px">
+       <path
+         d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+     </svg>
+   </button>
+ </div>
+       <!--End of Search bar-->
+
+       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+         <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+           <span class="sr-only">View notifications</span>
+           <!-- Heroicon name: bell -->
+           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+           </svg>
+         </button>
+         <a class="text-gray-800">...</a>
+         <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+           <img class="h-6 w-" src="shopping.png">
+           <!-- Heroicon name: shopping -->
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+
+         </button>
+
+
+         <!-- Profile dropdown -->
+         <div class="ml-3 relative">
+           <div>
+             <button class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
+               <span class="sr-only">Open user menu</span>
+               <img class="h-11 w-11 rounded-full" src="dofus_blanc.png" alt="profil">
+             </button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+ </nav>
+</head>
+<body>
+
+
+<div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center px-5 pb-10 pt-16">
+    <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700" style="max-width: 600px">
+        <div class="w-full pt-1 pb-5">
+            <div class="bg-indigo-500 text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
+                <i class="mdi mdi-credit-card-outline text-3xl"></i>
+            </div>
+        </div>
+        <div class="mb-10">
+            <h1 class="text-center font-bold text-xl uppercase">Information de paiement</h1>
+        </div>
+        <div class="mb-3 flex -mx-2">
+            <div class="px-2">
+                <label for="type1" class="flex items-center cursor-pointer">
+                    <input type="radio" class="form-radio h-5 w-5 text-indigo-500" name="type" id="type1" checked>
+                    <img src="https://leadershipmemphis.org/wp-content/uploads/2020/08/780370.png" class="h-8 ml-3">
+                </label>
+            </div>
+            <div class="px-2">
+                <label for="type2" class="flex items-center cursor-pointer">
+                    <input type="radio" class="form-radio h-5 w-5 text-indigo-500" name="type" id="type2">
+                    <img src="https://www.sketchappsources.com/resources/source-image/PayPalCard.png" class="h-8 ml-3">
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="font-bold text-sm mb-2 ml-1">Nom</label>
+            <div>
+                <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="JP Melvin" type="text"/>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="font-bold text-sm mb-2 ml-1">Numéro de carte</label>
+            <div>
+                <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="0000 0000 0000 0000" type="text"/>
+            </div>
+        </div>
+        <div class="mb-3 -mx-2 flex items-end">
+            <div class="px-2 w-1/2">
+                <label class="font-bold text-sm mb-2 ml-1">Date d'expiration</label>
+                <div>
+                    <select class="form-select w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer">
+                        <option value="01">01 - Janvier</option>
+                        <option value="02">02 - Fevrier</option>
+                        <option value="03">03 - Mars</option>
+                        <option value="04">04 - Avril</option>
+                        <option value="05">05 - Mai</option>
+                        <option value="06">06 - Juin</option>
+                        <option value="07">07 - Juillet</option>
+                        <option value="08">08 - Août</option>
+                        <option value="09">09 - Septembre</option>
+                        <option value="10">10 - Octobre</option>
+                        <option value="11">11 - Novembre</option>
+                        <option value="12">12 - Decembre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="px-2 w-1/2">
+                <select class="form-select w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer">
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-10">
+            <label class="font-bold text-sm mb-2 ml-1">Code de sécurité</label>
+            <div>
+                <input class="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="000" type="text"/>
+            </div>
+        </div>
+        <div>
+            <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"><i class="mdi mdi-lock-outline mr-1"></i>Go !</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
